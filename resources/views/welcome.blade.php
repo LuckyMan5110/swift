@@ -33,7 +33,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">SIGNUP</a></li>
                         </ul>
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LOGIN</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
                         </ul>
                     </div>
                 </div>
