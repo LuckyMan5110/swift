@@ -42,7 +42,7 @@ $(".submit").click(function(){
   // progressText[current - 1].classList.add("active");
   // current += 1;
   setTimeout(function(){
-    alert("New User Registered Successfully 👍 ");
+    alert("Login Successfully 👍 ");
     location.reload();
   }, 500);
 });
