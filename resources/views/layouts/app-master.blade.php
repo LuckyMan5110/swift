@@ -31,10 +31,23 @@
                             <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LENDER</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTART</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">SIGNING SERVICE</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">SIGNUP</a></li>
+                            {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                          </ul>
                          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
+                            @auth
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">aaaaa</a></li> --}}
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                        <li><a class="dropdown-item" href="{{ URL('/') }}">Settings</a></li>
+                                        <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
+                                    </ul>
+                                </li>
+                            @endauth
+                            
+                            @guest
+                                <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
+                            @endguest
                          </ul>
                       </div>
                 </div>
@@ -66,7 +79,7 @@
                                 <li><a href="{{ URL('/') }}">LENDER</a></li>
                                 <li><a href="{{ URL('/') }}">NOTART</a></li>
                                 <li><a href="{{ URL('/') }}">SIGNING SERVICE</a></li>
-                                <li><a href="{{ route('register') }}">SIGNUP</a></li>
+                                {{-- <li><a href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                             </ul>
                         </div>
                         <div class="col-md-6">
@@ -107,7 +120,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{ asset('assets/js/registration.js') }}"></script>
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
     </body>
 </html>

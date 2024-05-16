@@ -42,79 +42,99 @@
                </div>
             </div> -->
             <div class="form-outer">
-               <form action="#">
-                  <div class="page slide-page">
+               <form method="post" action="{{ route('register.perform') }}">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                  
+                  {{-- <div class="page slide-page">
                      <div class="alert alert-info mt-5 mb-5">
                         <strong>It is possible you are already in our system</strong><br> Please type your email to search whether a profile has already been created
                      </div>
                      <div class="title">
                         <i style="font-size: 18px;" class="fa fa-user"></i> Check Email
                      </div>
+                     @if ($errors->has('email'))
+                        <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+                     @endif
                      <div class="field mb-0">
                         <div class="label">
                            Email Address
                         </div>
-                        <input type="text" placeholder="name@example.com" >
-                        <!-- <input type="email" name="email" placeholder="Email" required="required"> -->
+                        <input class="login-input" id="registerEmail" type="text" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
                      </div>
                      <div class="text-center pt-3">
                         <p class="mb-0">Already have account? <a href="{{ URL('/login') }}" class="text-decoration-none text-primary ml-1">Sign In</a></p>
                      </div>
-                     <!-- <div class="field">
-                        <div class="label">
-                           Middle Name
-                        </div>
-                        <input type="text">
-                     </div>
-                     <div class="field">
-                        <div class="label">
-                           Last Name
-                        </div>
-                        <input type="text">
-                     </div> -->
                      <div class="field">
                         <button style="font-weight: bold;" class="firstNext next">Check For My Account</button>
                      </div>
-                  </div>
+                  </div> --}}
+
                   <div class="page">
                      <div class="title">
                         <i style="font-size: 18px;" class="fa fa-edit"></i> Register Account
                      </div>
-                     <div class="field">
-                     <div class="col-md-6 pe-3">
-                        <div class="label">
-                           First Name
-                        </div>
-                        <input type="text">
-                     </div>
-                     <div class="col-md-6">
-                        <div class="label">
-                           Last Name
-                        </div>
-                        <input type="text">
-                     </div>
-                  </div>
+                     <br>
+
+                     @if ($errors->has('email'))
+                        <span class="text-danger text-left">{{ $errors->first('email') }}</span>
+                     @endif
                      <div class="field mb-0">
-                     <div class="label">
-                        Username
+                        <div class="label">
+                           Email Address
+                        </div>
+                        <input class="login-input" type="text" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
                      </div>
-                     <input type="text">                     
-                  </div>
-                  <span>
-                     You can log in with either your email or username
-                  </span>
+
+                     <div class="field mb-0">
+                        <div class="col-md-6 pe-3">
+                           <div class="label">
+                              First Name
+                           </div>
+                           {{-- <input type="text"> --}}
+                           <input class="login-input" type="text" name="first_name" value="{{ old('first_name') }}" required="required">
+                        </div>
+                        <div class="col-md-6">
+                           <div class="label">
+                              Last Name
+                           </div>
+                           {{-- <input type="text"> --}}
+                           <input class="login-input" type="text" name="last_name" value="{{ old('last_name') }}" required="required">
+                        </div>
+                     </div>
+                     @if ($errors->has('username'))
+                        <span class="text-danger text-left">{{ $errors->first('username') }}</span>
+                     @endif
+                     <div class="field mb-0">
+                        <div class="label">
+                           Username
+                        </div>
+                        {{-- <input type="text">                      --}}
+                        <input class="login-input" type="text" name="username" value="{{ old('username') }}" required="required">
+                     </div>
+                     <span>
+                        You can log in with either your email or username
+                     </span>
+                     <br>
+                     @if ($errors->has('password'))
+                        <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+                     @endif
+                     <div class="field mb-0">
+                        <div class="label">
+                           Password
+                        </div>
+                        {{-- <input type="password"> --}}
+                        <input class="login-input" type="password" name="password" value="{{ old('password') }}" required="required">
+                     </div>
+                     @if ($errors->has('password_confirmation'))
+                            <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
+                        @endif
                      <div class="field">
-                     <div class="label">
-                        Password
+                        <div class="label">
+                           Confirm Password
+                        </div>
+                        {{-- <input type="password"> --}}
+                        <input class="login-input" type="password"  name="password_confirmation" value="{{ old('password_confirmation') }}" required="required">
                      </div>
-                     <input type="password">
-                  </div>
-                  <div class="field">
-                     <div class="label">
-                        Confirm Password
-                     </div>
-                     <input type="password">
-                  </div>
                      <div class="field btns">
                         <button class="prev-1 prev">Back</button>
                         <button class="submit">Sign Up</button>
@@ -125,7 +145,7 @@
             </div>
          </div>
    </section>
-   <script src="{{ asset('assets/js/registration.js') }}"></script>
+   <script src="{{ asset('assets/js/register.js') }}"></script>
 @endsection
             
 

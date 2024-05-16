@@ -105,7 +105,7 @@ class LoginRegisterController extends Controller
             return view('auth.dashboard');
         }
         
-        return redirect()->route('login')
+        return redirect()->route('login.perform')
             ->withErrors([
             'email' => 'Please login to access the dashboard.',
         ])->onlyInput('email');
@@ -122,7 +122,7 @@ class LoginRegisterController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login')
+        return redirect()->route('login.perform')
             ->withSuccess('You have logged out successfully!');;
     }    
 

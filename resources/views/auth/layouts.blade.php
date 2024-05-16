@@ -19,10 +19,10 @@
             <ul class="navbar-nav ms-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
+                        <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('login.perform') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register') }}">Register</a>
+                        <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('register.perform') }}">Register</a>
                     </li>
                 @else    
                     <li class="nav-item dropdown">
