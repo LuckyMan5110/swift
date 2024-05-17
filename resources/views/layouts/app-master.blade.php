@@ -19,6 +19,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body class="d-flex flex-column h-100">
+        <!-- GLOABAL LOADER -->
+        <div id="global-loader">
+            <div class="loader-text">
+                <h1 class="text-center">SWIFT DOCS PRO</h1>
+            </div>
+            <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
+        </div>
         <main class="flex-shrink-0">
             <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <div class="container-fluid">
