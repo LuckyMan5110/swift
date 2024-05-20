@@ -2,7 +2,10 @@
 
 <!-- GLOBAL-LOADER -->
 <div id="global-loader">
-    <img src="../assets/images/loader.svg" class="loader-img" alt="Loader">
+    <div class="loader-text">
+        <h1 class="text-center">SWIFT DOCS PRO</h1>
+    </div>
+    <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
 </div>
 
 <div class="page">
@@ -10,12 +13,12 @@
     <div class="page-content error-page">
         <div class="container text-center">
             <div class="error-template">
-                <h1 class="display-1 floating text-white mb-2">419</h1>
+                <h1 class="display-1 floating text-white mb-2">401</h1>
                 <h5 class="error-details text-white">
                     Sorry, an error has occured, Requested page not found!
                 </h5>
                 <div class="text-center">
-                    <a class="btn btn-primary-light mt-5 mb-5" href="/"> <i class="fa fa-long-arrow-left"></i> Back to Home </a>
+                    <a class="btn btn-primary-light mt-5 mb-5" href="/"><i class="fa fa-long-arrow-left"></i> Back to Home </a>
                 </div>
             </div>
         </div>
@@ -23,6 +26,6 @@
     <!-- PAGE-CONTENT OPEN CLOSED -->
 </div>
 
-@section('title', __('Page Expired'))
-@section('code', '419')
-@section('message', __('Page Expired'))
+@section('title', __('Unauthorized'))
+@section('code', '401')
+@section('message', __('Unauthorized'))

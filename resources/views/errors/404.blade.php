@@ -1,7 +1,10 @@
 @extends('errors::minimal')
 
 <div id="global-loader">
-    <img src="../assets/image/loader.svg" class="loader-img" alt="Loader">
+    <div class="loader-text">
+        <h1 class="text-center">SWIFT DOCS PRO</h1>
+    </div>
+    <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
 </div>
 
 <div class="page">

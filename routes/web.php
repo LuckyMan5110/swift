@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 Route::resource('companies', CompanyController::class);
 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
+        <meta name="description" content="SWIFT DOCS PRO" />
         <meta name="author" content="" />
         <title>@yield('title')</title>
         <!-- Favicon-->
@@ -14,10 +14,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+        <!-- Custom CSS-->
         <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
         <!-- jquery 3.5.1-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
+
     <body class="d-flex flex-column h-100">
         <!-- GLOABAL LOADER -->
         <div id="global-loader">
@@ -26,6 +28,83 @@
             </div>
             <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
         </div>
+       
+        {{-- <div class="alerts">
+            <div class="alert sucess">    
+              <span class="alert-icon"><i class="fa fa-check"></i>      
+              </span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">Login Success</span>
+              </span>    
+            </div>
+            <div class="alert request">
+              <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">Request submitted</span>
+                <span class="alert-subtitle">
+                  View details
+                  <ul class="little-list">
+                    <li>New account has been created</li>
+                    <li>New provider has been created</li>
+                    <li>New provider has been created</li>
+                    <li>New provider has been created</li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+            <div class="alert wait">
+              <span class="alert-icon"><i class="fa fa-clock-o"></i></span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">Wait a Moment</span>
+                <span class="alert-subtitle">
+                  View details
+                  <ul class="little-list">
+                    <li>New account has been created</li>
+                    <li>New provider has been created</li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+            <div class="alert failed">
+              <span class="alert-icon"><i class="fa fa-times"></i></span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">Failed</span>      
+                <span class="alert-subtitle">
+                  View details
+                  <ul class="little-list">
+                    <li>New account has been created</li>
+                    <li>New provider has been created</li>
+                  </ul>
+                </span>
+              </span>
+            </div>
+        </div> --}}
+        <div class="alerts">
+          @if(session()->has('login_success'))
+            <div class="alert sucess">    
+              <span class="alert-icon"><i class="fa fa-check"></i>      
+              </span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">{{ session()->get('login_success') }}</span>
+              </span>    
+            </div>
+          @endif
+          @if(session()->has('register_success'))
+            <div class="alert request">
+              <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+              <span class="alert-content">
+                <span class="alert-close"><i class="fa fa-times"></i></span>
+                <span class="alert-title">{{ session()->get('register_success') }}</span>
+              </span>
+            </div>
+          @endif
+        </div>
+
         <main class="flex-shrink-0">
             <nav class="navbar navbar-expand-lg bg-light fixed-top">
                 <div class="container-fluid">
@@ -59,7 +138,7 @@
                       </div>
                 </div>
              </nav>
-			@yield('content')
+			      @yield('content')
         </main>
 
         <!-- Footer-->

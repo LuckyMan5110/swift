@@ -2,7 +2,10 @@
 
 <!-- GLOBAL-LOADER -->
 <div id="global-loader">
-    <img src="../assets/images/loader.svg" class="loader-img" alt="Loader">
+    <div class="loader-text">
+        <h1 class="text-center">SWIFT DOCS PRO</h1>
+    </div>
+    <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
 </div>
 
 <div class="page">
@@ -10,7 +13,7 @@
     <div class="page-content error-page">
         <div class="container text-center">
             <div class="error-template">
-                <h1 class="display-1 floating text-white mb-2">503</h1>
+                <h1 class="display-1 floating text-white mb-2">402</h1>
                 <h5 class="error-details text-white">
                     Sorry, an error has occured, Requested page not found!
                 </h5>
@@ -23,6 +26,6 @@
     <!-- PAGE-CONTENT OPEN CLOSED -->
 </div>
 
-@section('title', __('Service Unavailable'))
-@section('code', '503')
-@section('message', __('Service Unavailable'))
+@section('title', __('Payment Required'))
+@section('code', '402')
+@section('message', __('Payment Required'))

@@ -36,7 +36,7 @@ class LoginController extends Controller
 
         Auth::login($user);
         // \LogActivity::addToLog('Logged in');
-        return $this->authenticated($request, $user);
+        return $this->authenticated($request, $user)->with('login_success', 'Account successfully Logged in.');
     }
 
     /**

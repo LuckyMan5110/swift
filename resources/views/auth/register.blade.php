@@ -45,7 +45,7 @@
                <form method="post" action="{{ route('register.perform') }}">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                   
-                  {{-- <div class="page slide-page">
+                  <div class="page slide-page" id="firstSignup">
                      <div class="alert alert-info mt-5 mb-5">
                         <strong>It is possible you are already in our system</strong><br> Please type your email to search whether a profile has already been created
                      </div>
@@ -67,15 +67,15 @@
                      <div class="field">
                         <button style="font-weight: bold;" class="firstNext next">Check For My Account</button>
                      </div>
-                  </div> --}}
+                  </div>
 
-                  <div class="page">
+                  <div class="page" id="secondSignup">
                      <div class="title">
                         <i style="font-size: 18px;" class="fa fa-edit"></i> Register Account
                      </div>
                      <br>
 
-                     @if ($errors->has('email'))
+                     {{-- @if ($errors->has('email'))
                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                      @endif
                      <div class="field mb-0">
@@ -83,7 +83,7 @@
                            Email Address
                         </div>
                         <input class="login-input" type="text" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
-                     </div>
+                     </div> --}}
 
                      <div class="field mb-0">
                         <div class="col-md-6 pe-3">
