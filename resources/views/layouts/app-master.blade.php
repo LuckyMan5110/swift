@@ -28,117 +28,45 @@
             </div>
             <img src="{{ asset('assets/image/loader.svg') }}" class="loader-img" alt="Loader">
         </div>
-       
-        {{-- <div class="alerts">
-            <div class="alert sucess">    
-              <span class="alert-icon"><i class="fa fa-check"></i>      
-              </span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">Login Success</span>
-              </span>    
-            </div>
-            <div class="alert request">
-              <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">Request submitted</span>
-                <span class="alert-subtitle">
-                  View details
-                  <ul class="little-list">
-                    <li>New account has been created</li>
-                    <li>New provider has been created</li>
-                    <li>New provider has been created</li>
-                    <li>New provider has been created</li>
-                  </ul>
-                </span>
-              </span>
-            </div>
-            <div class="alert wait">
-              <span class="alert-icon"><i class="fa fa-clock-o"></i></span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">Wait a Moment</span>
-                <span class="alert-subtitle">
-                  View details
-                  <ul class="little-list">
-                    <li>New account has been created</li>
-                    <li>New provider has been created</li>
-                  </ul>
-                </span>
-              </span>
-            </div>
-            <div class="alert failed">
-              <span class="alert-icon"><i class="fa fa-times"></i></span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">Failed</span>      
-                <span class="alert-subtitle">
-                  View details
-                  <ul class="little-list">
-                    <li>New account has been created</li>
-                    <li>New provider has been created</li>
-                  </ul>
-                </span>
-              </span>
-            </div>
-        </div> --}}
-        <div class="alerts">
-          @if(session()->has('login_success'))
-            <div class="alert sucess">    
-              <span class="alert-icon"><i class="fa fa-check"></i>      
-              </span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">{{ session()->get('login_success') }}</span>
-              </span>    
-            </div>
-          @endif
-          @if(session()->has('register_success'))
-            <div class="alert request">
-              <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
-              <span class="alert-content">
-                <span class="alert-close"><i class="fa fa-times"></i></span>
-                <span class="alert-title">{{ session()->get('register_success') }}</span>
-              </span>
-            </div>
-          @endif
-        </div>
+
+        @include('layouts.partials.messages')
 
         <main class="flex-shrink-0">
             <nav class="navbar navbar-expand-lg bg-light fixed-top">
-                <div class="container-fluid">
-                      <a class="navbar-brand" href="{{ URL('/') }}"><img src="{{ asset('assets/image/favicon.ico') }}" style="width: 2.5rem" alt="logo" />SWIFT DOCS PRO</a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">TITLE & ESCROW</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LENDER</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTART</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">SIGNING SERVICE</a></li>
-                            {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
-                         </ul>
-                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            @auth
-                                {{-- <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">aaaaa</a></li> --}}
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                        <li><a class="dropdown-item" href="{{ URL('/') }}">Settings</a></li>
-                                        <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
-                                    </ul>
-                                </li>
-                            @endauth
-                            
-                            @guest
-                                <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
-                            @endguest
-                         </ul>
-                      </div>
-                </div>
-             </nav>
+              <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ URL('/') }}"><img src="{{ asset('assets/image/favicon.ico') }}" style="width: 2.5rem" alt="logo" />SWIFT DOCS PRO</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">HOME</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">TITLE & ESCROW</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LENDER</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTART</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">SIGNING SERVICE</a></li>
+                          {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
+                        </ul>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          @auth
+                              {{-- <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">aaaaa</a></li> --}}
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
+                                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                      <li><a class="dropdown-item" href="{{ URL('/') }}">Settings</a></li>
+                                      <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
+                                  </ul>
+                              </li>
+                          @endauth
+                          
+                          @guest
+                              <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
+                          @endguest
+                        </ul>
+                    </div>
+              </div>
+            </nav>
+
 			      @yield('content')
+            
         </main>
 
         <!-- Footer-->

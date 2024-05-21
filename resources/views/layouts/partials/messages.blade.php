@@ -1,26 +1,77 @@
-@if(isset ($errors) && count($errors) > 0)
-    <div class="alert alert-warning" role="alert">
-        <ul class="list-unstyled mb-0">
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-@if(Session::get('success', false))
-    <?php $data = Session::get('success'); ?>
-    @if (is_array($data))
-        @foreach ($data as $msg)
-            <div class="alert alert-warning" role="alert">
-                <i class="fa fa-check"></i>
-                {{ $msg }}
-            </div>
-        @endforeach
-    @else
-        <div class="alert alert-warning" role="alert">
-            <i class="fa fa-check"></i>
-            {{ $data }}
+<div class="alerts">
+    @if(session()->has('login_success'))
+        <div class="alert sucess">    
+        <span class="alert-icon"><i class="fa fa-check"></i>      
+        </span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('login_success') }}</span>
+        </span>    
         </div>
     @endif
-@endif
+    @if(session()->has('register_success'))
+        <div class="alert request">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('register_success') }}</span>
+        </span>
+        </div>
+    @endif
+</div>
+
+
+{{-- <div class="alerts">
+    <div class="alert sucess">    
+        <span class="alert-icon"><i class="fa fa-check"></i>      
+        </span>
+        <span class="alert-content">
+        <span class="alert-close"><i class="fa fa-times"></i></span>
+        <span class="alert-title">Login Success</span>
+        </span>    
+    </div>
+    <div class="alert request">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+        <span class="alert-close"><i class="fa fa-times"></i></span>
+        <span class="alert-title">Request submitted</span>
+        <span class="alert-subtitle">
+            View details
+            <ul class="little-list">
+            <li>New account has been created</li>
+            <li>New provider has been created</li>
+            <li>New provider has been created</li>
+            <li>New provider has been created</li>
+            </ul>
+        </span>
+        </span>
+    </div>
+    <div class="alert wait">
+        <span class="alert-icon"><i class="fa fa-clock-o"></i></span>
+        <span class="alert-content">
+        <span class="alert-close"><i class="fa fa-times"></i></span>
+        <span class="alert-title">Wait a Moment</span>
+        <span class="alert-subtitle">
+            View details
+            <ul class="little-list">
+            <li>New account has been created</li>
+            <li>New provider has been created</li>
+            </ul>
+        </span>
+        </span>
+    </div>
+    <div class="alert failed">
+        <span class="alert-icon"><i class="fa fa-times"></i></span>
+        <span class="alert-content">
+        <span class="alert-close"><i class="fa fa-times"></i></span>
+        <span class="alert-title">Failed</span>      
+        <span class="alert-subtitle">
+            View details
+            <ul class="little-list">
+            <li>New account has been created</li>
+            <li>New provider has been created</li>
+            </ul>
+        </span>
+        </span>
+    </div>
+</div> --}}
