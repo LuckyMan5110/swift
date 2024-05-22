@@ -94,7 +94,9 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
@@ -103,12 +105,17 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `users` */
 
-insert  into `users`(`id`,`name`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) values 
-(1,'Til Drexler','goodluck3110.dev@gmail.com',NULL,'$2y$10$M2U3DTB84EcBlYTSPBdPYuDC8ab0.QntHXwm9zpmrR6K3EH477iK.',NULL,'2024-05-09 18:24:04','2024-05-09 18:24:04');
+insert  into `users`(`id`,`first_name`,`last_name`,`username`,`email`,`email_verified_at`,`password`,`remember_token`,`created_at`,`updated_at`) values 
+(1,'Nelson','Mujica','nelson1210','goodluck3110.dev@gmail.com',NULL,'$2y$10$M2U3DTB84EcBlYTSPBdPYuDC8ab0.QntHXwm9zpmrR6K3EH477iK.',NULL,'2024-05-09 18:24:04','2024-05-09 18:24:04'),
+(2,'Til','Drexler','drexler110','goodluckdev@gmail.com',NULL,'$2y$10$M2U3DTB84EcBlYTSPBdPYuDC8ab0.QntHXwm9zpmrR6K3EH477iK.',NULL,'2024-05-16 17:07:24','2024-05-16 17:07:24'),
+(3,'aaa','nnn','aaaaa','good11luck3110.dev@gmail.com',NULL,'$2y$10$t7XGMGH3mYl/mo/sj/ETjuNt2Hk6Lvqtx2BJ9a4MsJpANxsI/REiq',NULL,'2024-05-16 17:24:53','2024-05-16 17:24:53'),
+(4,'nelson','musica','nelson11','dev@gmail.com',NULL,'$2y$10$ebKDVQbSe1jzRqtXFSzUzeBOwWOFaAcT3KAODW4gtab0Uq3iY4kKC',NULL,'2024-05-17 18:28:24','2024-05-17 18:28:24'),
+(5,'nelson','mujica','nelson1211','nelson12@gmail.com',NULL,'$2y$10$2dnHOjwj5XtbS/N.VNuYheb1cxEm.xhFxkLAVszOc3xFYU69mYW6W',NULL,'2024-05-17 18:31:40','2024-05-17 18:31:40'),
+(6,'aaaaa','nnnnn','nelson12','ihortym@outlook.com',NULL,'$2y$10$CSxkWo1PDFXeAOjczxBCqO6oMkwUABNnQv5Z/nGtF3FpuwYrTDnUq',NULL,'2024-05-20 15:21:09','2024-05-20 15:21:09');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
