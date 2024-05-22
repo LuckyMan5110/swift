@@ -32,4 +32,16 @@ class RegisterController extends Controller
 
         return redirect('/')->with('register_success', "Account successfully registered.");
     }
+
+    public function checkemail(Request $request) 
+    {
+        $data = $request->all();
+        $checkemail = $data['checkemail'];
+        $users = User::where('email', $checkemail)
+            // ->select('users.*', 'zones.name')
+            // ->join('zones', 'users.id', '=', 'zones.user_id')
+            ->get();
+        $result = sizeof($users)?'This email already exists in our database.':'ok';
+        return $result;
+    }
 }

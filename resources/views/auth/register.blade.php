@@ -55,6 +55,7 @@
                      @if ($errors->has('email'))
                         <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                      @endif
+                     <span class="text-danger text-left" id="errorMsg" style="display: none;"></span>
                      <div class="field mb-0">
                         <div class="label">
                            Email Address

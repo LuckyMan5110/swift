@@ -10,9 +10,6 @@ Route::resource('companies', CompanyController::class);
 | Web Routes
 |--------------------------------------------------------------------------
 */
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {   
@@ -20,6 +17,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::post('/checkemail', 'RegisterController@checkemail');
     
     Route::group(['middleware' => ['guest']], function() {
         /**

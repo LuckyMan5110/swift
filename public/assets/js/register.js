@@ -1,24 +1,49 @@
 
 $(document).ready(function(){
-  const slidePage = document.querySelector(".slide-page");
-  
-  $(".firstNext").click(function(){
-    const registeremail = $('#registerEmail').val();
-    if (registeremail){
-      // slidePage.style.marginLeft = "-14%";
-      $('#firstSignup').hide();
-      $('#secondSignup').show();
+    // Regular expression for email validation
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    // Function to validate email
+    function isValidEmail(email) {
+        return emailPattern.test(email);
     }
-  });
-  
-  
-  $(".prev-1").click(function(){
-    // slidePage.style.marginLeft = "11%";
-    $('#firstSignup').show();
+
     $('#secondSignup').hide();
-  });
+    $(".firstNext").click(function(){
+        const registeremail = $('#registerEmail').val();
+        if (registeremail){
+            if (isValidEmail(registeremail)) {
+                $.ajax({
+                    headers: {'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+                    type: 'POST',
+                    url: 'checkemail',
+                    data: {
+                        checkemail: registeremail
+                    },
+                    success: function(response) {
+                        if (response == 'ok'){
+                            $('#errorMsg').hide();
+                            $('#firstSignup').hide();
+                            $('#secondSignup').show();
+                        } else{
+                            $('#errorMsg').text(response);
+                            $('#errorMsg').show();
+                        }
+                    }
+                });
+            } else{
+                $('#errorMsg').text('The email field must be a valid email address.');
+                $('#errorMsg').show();
+            }
+        } else {
+            $('#errorMsg').hide();
+        }
+    });
+  
+    $(".prev-1").click(function(){
+      $('#firstSignup').show();
+      $('#secondSignup').hide();
+    });
 
 });
-
-
 
