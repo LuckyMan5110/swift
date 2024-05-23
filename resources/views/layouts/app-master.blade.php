@@ -41,7 +41,7 @@
                           <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">HOME</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">TITLE & ESCROW</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LENDER</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTART</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTARY</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">SIGNING SERVICE</a></li>
                           {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                         </ul>
