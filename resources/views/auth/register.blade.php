@@ -91,14 +91,12 @@
                            <div class="label">
                               First Name
                            </div>
-                           {{-- <input type="text"> --}}
                            <input class="login-input" type="text" name="first_name" value="{{ old('first_name') }}" required="required">
                         </div>
                         <div class="col-md-6">
                            <div class="label">
                               Last Name
                            </div>
-                           {{-- <input type="text"> --}}
                            <input class="login-input" type="text" name="last_name" value="{{ old('last_name') }}" required="required">
                         </div>
                      </div>
@@ -109,7 +107,6 @@
                         <div class="label">
                            Username
                         </div>
-                        {{-- <input type="text">                      --}}
                         <input class="login-input" type="text" name="username" value="{{ old('username') }}" required="required">
                      </div>
                      <span>
@@ -123,7 +120,6 @@
                         <div class="label">
                            Password
                         </div>
-                        {{-- <input type="password"> --}}
                         <input class="login-input" type="password" name="password" value="{{ old('password') }}" required="required">
                      </div>
                      @if ($errors->has('password_confirmation'))
@@ -133,7 +129,6 @@
                         <div class="label">
                            Confirm Password
                         </div>
-                        {{-- <input type="password"> --}}
                         <input class="login-input" type="password"  name="password_confirmation" value="{{ old('password_confirmation') }}" required="required">
                      </div>
                      <div class="field btns">

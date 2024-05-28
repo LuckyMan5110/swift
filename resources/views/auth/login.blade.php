@@ -20,7 +20,15 @@
                         <i style="font-size: 18px;" class="fa fa-user"></i> User Login
                      </div>
                      <br>
-                     @include('layouts.partials.messages')
+                     @if(isset ($errors) && count($errors) > 0)
+                        <div class="alert alert-warning" role="alert">
+                           <ul class="list-unstyled mb-0">
+                                 @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                 @endforeach
+                           </ul>
+                        </div>
+                     @endif
 
                      @if ($errors->has('username'))
                         <span class="text-danger text-left">{{ $errors->first('username') }}</span>
@@ -29,7 +37,6 @@
                         <div class="label">
                            Username or Email
                         </div>
-                        {{-- <input type="text">  --}}
                         <input class="login-input" type="text" value="{{ old('username') }}" name="username" required="required" autofocus>                    
                      </div>
 
@@ -40,7 +47,6 @@
                         <div class="label">
                            Password
                         </div>
-                        {{-- <input type="password"> --}}
                         <input class="login-input" type="password" name="password" required="required">
                      </div>
                      <div class="text-center pt-3">
