@@ -18,6 +18,25 @@
         </span>
         </div>
     @endif
+    @if(session()->has('upload_success'))
+        <div class="alert sucess">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('upload_success') }}</span>
+        </span>
+        </div>
+    @endif
+    
+    @if(session()->has('upload_error'))
+        <div class="alert failed">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('upload_error') }}</span>
+        </span>
+        </div>
+    @endif
 </div>
 
 

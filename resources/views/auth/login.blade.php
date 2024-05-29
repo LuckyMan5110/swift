@@ -50,7 +50,7 @@
                         <input class="login-input" type="password" name="password" required="required">
                      </div>
                      <div class="text-center pt-3">
-                        <p class="mb-0">Not a member? <a href="{{ URL('/register') }}" class="text-decoration-none text-primary ml-1">Sign Up now</a></p>
+                        <p class="mb-0">Not a member? <a href="{{ route('register.show') }}" class="text-decoration-none text-primary ml-1">Sign Up now</a></p>
                      </div>
                      <div class="field btns">
                         <button class="submit">Log In</button>

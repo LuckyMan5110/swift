@@ -63,7 +63,7 @@
                         <input class="login-input" id="registerEmail" type="text" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
                      </div>
                      <div class="text-center pt-3">
-                        <p class="mb-0">Already have account? <a href="{{ URL('/login') }}" class="text-decoration-none text-primary ml-1">Sign In</a></p>
+                        <p class="mb-0">Already have account? <a href="{{ route('logout.perform') }}" class="text-decoration-none text-primary ml-1">Sign In</a></p>
                      </div>
                      <div class="field">
                         <button style="font-weight: bold;" class="firstNext next">Check For My Account</button>

@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-Route::resource('companies', CompanyController::class);
-
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +14,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/contact', 'HomeController@contact')->name('home.contact');
     Route::post('/checkemail', 'RegisterController@checkemail');
+    Route::post('/upload', 'FileUploadController@uploadFile')->name('upload.file');
+    Route::get('/upload', 'FileUploadController@show')->name('upload.show');
+
     
     Route::group(['middleware' => ['guest']], function() {
         /**

@@ -34,15 +34,17 @@
         <main class="flex-shrink-0">
             <nav class="navbar navbar-expand-lg bg-light fixed-top">
               <div class="container-fluid">
-                    <a class="navbar-brand" href="{{ URL('/') }}"><img src="{{ asset('assets/image/favicon.ico') }}" style="width: 2.5rem" alt="logo" />SWIFT DOCS PRO</a>
+                    <a class="navbar-brand" href="{{ route('home.index') }}"><img src="{{ asset('assets/image/favicon.ico') }}" style="width: 2.5rem" alt="logo" />SWIFT DOCS PRO</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">HOME</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">TITLE & ESCROW</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">LENDER</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">NOTARY</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ URL('/') }}">SIGNING SERVICE</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">HOME</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">TITLE & ESCROW</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">LENDER</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">NOTARY</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">SIGNING SERVICE</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">SIGNING SERVICE</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{{ route('home.contact') }}">CONTACT</a></li>
                           {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                         </ul>
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -51,14 +53,14 @@
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
                                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                      <li><a class="dropdown-item" href="{{ URL('/') }}">Settings</a></li>
+                                      <li><a class="dropdown-item" href="{{ route('home.index') }}">Settings</a></li>
                                       <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
                                   </ul>
                               </li>
                           @endauth
                           
                           @guest
-                              <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">LOGIN</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ route('login.show') }}">LOGIN</a></li>
                           @endguest
                         </ul>
                     </div>
@@ -87,19 +89,19 @@
                         <h4 class="footer-brand-text">Menu —</h4>
                         <div class="col-md-6">
                             <ul class="pages">
-                                <li><a href="{{ URL('/') }}">HOME</a></li>
-                                <li><a href="{{ URL('/') }}">TITLE & ESCROW</a></li>
-                                <li><a href="{{ URL('/') }}">LENDER</a></li>
-                                <li><a href="{{ URL('/') }}">NOTART</a></li>
-                                <li><a href="{{ URL('/') }}">SIGNING SERVICE</a></li>
+                                <li><a href="{{ route('home.index') }}">HOME</a></li>
+                                <li><a href="{{ route('home.index') }}">TITLE & ESCROW</a></li>
+                                <li><a href="{{ route('home.index') }}">LENDER</a></li>
+                                <li><a href="{{ route('home.index') }}">NOTART</a></li>
+                                <li><a href="{{ route('home.index') }}">SIGNING SERVICE</a></li>
                                 {{-- <li><a href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list">
-                                <li><a href="{{ URL('/') }}">Contact</a></li>
-                                <li><a href="{{ URL('/') }}">Privacy</a></li>
-                                <li><a href="{{ URL('/') }}">Terms of Service</a></li>
+                                <li><a href="{{ route('home.index') }}">Contact</a></li>
+                                <li><a href="{{ route('home.index') }}">Privacy</a></li>
+                                <li><a href="{{ route('home.index') }}">Terms of Service</a></li>
                             </ul>
                         </div>
                     </div>
@@ -132,6 +134,9 @@
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
         <!-- Core theme JS-->
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
     </body>
