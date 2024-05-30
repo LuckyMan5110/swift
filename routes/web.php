@@ -17,7 +17,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/contact', 'HomeController@contact')->name('home.contact');
     Route::post('/checkemail', 'RegisterController@checkemail');
     Route::post('/upload', 'FileUploadController@uploadFile')->name('upload.file');
-    Route::get('/upload', 'FileUploadController@show')->name('upload.show');
+    Route::get('/upload', 'FileUploadController@show');
+    Route::post('/recaptcha', 'ReCaptchaController@recaptcha')->name('recaptcha.perform');
+    Route::get('/recaptcha', 'ReCaptchaController@show');
 
     
     Route::group(['middleware' => ['guest']], function() {
