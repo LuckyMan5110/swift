@@ -28,6 +28,7 @@
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            @csrf
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -59,8 +60,7 @@
                             <!-- has successfully submitted-->
                             <div class="d-none te" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
-                                    <h2>Submission Successful!</h2>
-                                    {{-- <div class="fw-bolder">Form submission successful!</div> --}}
+                                    <h2 id="resultMsg"></h2>
                                 </div>
                             </div>
                             <!-- Submit error message-->
@@ -99,6 +99,7 @@
             </div>
         </div>
     </section>
+   <script src="{{ asset('assets/js/contact.js') }}"></script>
 
 @endsection
    

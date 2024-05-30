@@ -107,22 +107,22 @@
                     </div>
                     <div class="col-lg-4 footer-ns animated fadeInRight">
                         <h4>Inquiries</h4>
-                        <form>
-                            <input type="hidden" name="core_btZyx4ZsXBL7KJxqyWfC5chB5K72rpDm" value="d94baa1e7e566c3dd1ca2a6ae5d57728" style="display:none;">
+                        <form method="post" action="{{ route('home.sendMsg') }}">
+                            @csrf
                             <div class="form-group col-lg-12">
-                                <input type="text" name="name" class="form-control" placeholder="Name" required="required" fdprocessedid="oxxlyn">
+                                <input type="text" name="name" class="form-control" placeholder="Full name" required="required">
                             </div>
                             <div class="form-group col-lg-12">
-                                <input type="text" name="email" class="form-control" placeholder="Email" required="required" fdprocessedid="3i1khs">
+                                <input type="email" name="email" class="form-control" placeholder="Email address" required="required">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="text" name="phone_number" class="form-control" placeholder="Phone number" required="required">
                             </div>
                             <div class="form-group  col-lg-12">
-                                <textarea type="text" rows="3" name="comments" class="form-control" placeholder="How may we help?" required=""></textarea>
+                                <textarea type="text" rows="3" name="message" class="form-control" placeholder="Message" required=""></textarea>
                             </div>
-                            <!-- <div class="form-group col-lg-12">
-                                <div class="g-recaptcha" data-sitekey="6Ldwl58UAAAAAMPgHjrMs40Yn6XQI0d7-e5TH70F"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-9kk5l3b9jbk5" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./SwiftDocsPro __ Notary Database and Scheduling Platform_files/anchor.html"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./SwiftDocsPro __ Notary Database and Scheduling Platform_files/saved_resource.html"></iframe></div>
-                            </div> -->
                             <div class="col-lg-12 d-flex justify-content-center form-group  col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                                <button type="submit" class="btn ma-10 rounded-lg text-center submit-btn" fdprocessedid="5ausd9p">Submit
+                                <button type="submit" class="btn ma-10 rounded-lg text-center submit-btn">Submit
                                 </button>
                             </div>
                         </form>

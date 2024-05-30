@@ -9,6 +9,7 @@
         </span>    
         </div>
     @endif
+
     @if(session()->has('register_success'))
         <div class="alert request">
         <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
@@ -18,6 +19,7 @@
         </span>
         </div>
     @endif
+
     @if(session()->has('upload_success'))
         <div class="alert sucess">
         <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
@@ -27,7 +29,6 @@
         </span>
         </div>
     @endif
-    
     @if(session()->has('upload_error'))
         <div class="alert failed">
         <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
@@ -37,6 +38,27 @@
         </span>
         </div>
     @endif
+
+    @if(session()->has('contact_success'))
+        <div class="alert sucess">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('contact_success') }}</span>
+        </span>
+        </div>
+    @endif
+    @if(session()->has('contact_error'))
+        <div class="alert failed">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('contact_error') }}</span>
+        </span>
+        </div>
+    @endif
+
+    
 </div>
 
 

@@ -15,13 +15,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      */
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/contact', 'HomeController@contact')->name('home.contact');
-    Route::post('/checkemail', 'RegisterController@checkemail');
+    Route::post('/contact', 'PostController@sendMsg')->name('home.sendMsg');;
     Route::post('/upload', 'FileUploadController@uploadFile')->name('upload.file');
     Route::get('/upload', 'FileUploadController@show');
     Route::post('/recaptcha', 'ReCaptchaController@recaptcha')->name('recaptcha.perform');
     Route::get('/recaptcha', 'ReCaptchaController@show');
+    Route::post('/checkemail', 'RegisterController@checkemail');
 
-    
     Route::group(['middleware' => ['guest']], function() {
         /**
          * Register Routes
@@ -33,8 +33,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Login Routes
          */
         Route::get('/login', 'LoginController@show')->name('login.show');
-        Route::post('/login', 'LoginController@login')->name('login.perform');
-        
+        Route::post('/login', 'LoginController@login')->name('login.perform');        
     });
 
     Route::group(['middleware' => ['auth']], function() {
@@ -42,6 +41,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Logout Routes
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-
     });
 });
