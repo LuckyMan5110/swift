@@ -6,6 +6,9 @@
       .footer-bs{
          display: none;
       }
+      main{
+         background-image: none !important;
+      }
    </style>
    <link href="{{ asset('assets/css/signup.css') }}" rel="stylesheet">
    <section id="userSignup">

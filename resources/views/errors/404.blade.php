@@ -17,7 +17,7 @@
                     Sorry, an error has occured, Requested page not found!
                 </h5>
                 <div class="text-center">
-                    <a class="btn btn-primary-light mt-5 mb-5" href="/"> <i class="fa fa-long-arrow-left"></i> Back to Home </a>
+                    <a class="btn btn-primary-light mt-5 mb-5 text-light" href="/"> <i class="fa fa-long-arrow-left"></i> Back to Home </a>
                 </div>
             </div>
         </div>

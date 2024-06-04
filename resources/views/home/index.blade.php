@@ -4,6 +4,8 @@
 @section('content')
     <!-- banner-background section-->
     <section class="banner-background">
+        <div id="particles-js">
+        </div>
         <div class="row">
             <img class="logo-words" src="assets/image/logo2.png" alt="SwiftDocsPro Words" data-nsfw-filter-status="sfw" style="visibility: visible;">
             <p id="banner-text-1" class="text-center">POWERFUL · INTUITIVE</p>
@@ -129,7 +131,7 @@
     <!-- Benefits section-->
     <section id="benefits" class="text-areas">
         <h1 class="section-title">Benefits</h1>
-        <h3 class="text-center">Swift Docs Pro is a practical and inexhaustible solution</h3>
+        <h3 class="section-title text-center">Swift Docs Pro is a practical and inexhaustible solution</h3>
         <div class="container">
             <hr class="rounded" style="border-color: #F48235;">
         </div>
@@ -356,5 +358,6 @@
             </div>
         </div>
     </section>  
+
 @endsection
    
