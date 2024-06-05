@@ -203,6 +203,8 @@ hr.card-separator {
   border-color: #e7e7e7;
 }
 .features-lists-b {
+  font-size: 1.1em;
+  font-weight: bold;
   padding: 10px 15px;
   color: rgba(0, 0, 0, 0.5);
   font-family: RobotoRegular, serif;
@@ -319,13 +321,13 @@ hr.card-separator {
   color: inherit;
 }
 .panel-heading {
-  padding: 10px 15px;
+  padding: 10px 15px 20px;
   border-bottom: 1px solid transparent;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 .panel-body {
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 
 .team-members {

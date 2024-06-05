@@ -1,5 +1,5 @@
 @extends('layouts.app-master')
-@section('title','Swift Docs Pro')
+@section('title','Contact Us - Swift')
 
 @section('content')
     <style>
