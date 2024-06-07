@@ -17,10 +17,7 @@ body{
   /* background: linear-gradient(90deg, rgba(2,37,27,1) 0%, rgba(9,121,93,1) 40%, rgba(20,185,144,1) 74%, rgba(0,255,204,1) 100%); */
   background: linear-gradient(70deg, #140E38 0%, #140E38 25%, #14387B 35%, #14387B 65%, #140E38 75%, #140E38 100%);
 }
-::selection{
-  color: black;
-  background: lightblue;
-}
+
 .container{
   width: 400px;
   margin-top: 6.5%;

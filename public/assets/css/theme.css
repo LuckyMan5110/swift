@@ -1,6 +1,10 @@
 body {
   font-size: 14px;
 }
+::selection{
+  color: black;
+  background: lightblue;
+}
 .navbar{
   /* border: .08em solid #eee; */
   /* background-color: #194089 !important; */
@@ -453,14 +457,14 @@ hr.card-separator {
     margin-top: 40px;
     margin-bottom: 10px;
 }
-.form-control {
+.footer-bs .form-control {
   background-color: #c6c8ca;
   padding: 0.7em 1em;
 }
-.form-group {
+.footer-bs .form-group {
   margin-bottom: 20px;
 }
-.form-control:focus {
+.footer-bs .form-control:focus {
   border-color: #66afe9;
   outline: 0;
   background-color: #c6c8ca;

@@ -359,5 +359,7 @@
         </div>
     </section>  
 
+    <script src="{{ asset('assets/js/particles.js') }}"></script>
+    <script src="{{ asset('assets/js/home.js') }}"></script>
 @endsection
    

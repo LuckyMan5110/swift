@@ -127,7 +127,7 @@
                      </div>
                      @if ($errors->has('password_confirmation'))
                             <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
-                        @endif
+                     @endif
                      <div class="field">
                         <div class="label">
                            Confirm Password

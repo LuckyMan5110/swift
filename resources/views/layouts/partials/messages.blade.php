@@ -9,13 +9,21 @@
         </span>    
         </div>
     @endif
-
     @if(session()->has('register_success'))
         <div class="alert request">
         <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
         <span class="alert-content">
             <span class="alert-close"><i class="fa fa-times"></i></span>
             <span class="alert-title">{{ session()->get('register_success') }}</span>
+        </span>
+        </div>
+    @endif
+    @if(session()->has('update_success'))
+        <div class="alert sucess">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('update_success') }}</span>
         </span>
         </div>
     @endif

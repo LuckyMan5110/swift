@@ -99,7 +99,8 @@
             </div>
         </div>
     </section>
-   <script src="{{ asset('assets/js/contact.js') }}"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="{{ asset('assets/js/contact.js') }}"></script>
 
 @endsection
    

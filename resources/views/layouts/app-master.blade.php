@@ -53,7 +53,7 @@
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
                                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                      <li><a class="dropdown-item" href="{{ route('home.index') }}">Settings</a></li>
+                                      <li><a class="dropdown-item" href="{{ route('user.index') }}">Settings</a></li>
                                       <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
                                   </ul>
                               </li>
@@ -134,11 +134,8 @@
         
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
 
         <!-- Core theme JS-->
-        <script src="{{ asset('assets/js/particles.js') }}"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
     </body>
 </html>

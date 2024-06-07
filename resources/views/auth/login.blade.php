@@ -33,9 +33,6 @@
                         </div>
                      @endif
 
-                     @if ($errors->has('username'))
-                        <span class="text-danger text-left">{{ $errors->first('username') }}</span>
-                     @endif
                      <div class="field">
                         <div class="label">
                            Username or Email
@@ -43,9 +40,6 @@
                         <input class="login-input" type="text" value="{{ old('username') }}" name="username" required="required" autofocus>                    
                      </div>
 
-                     @if ($errors->has('password'))
-                        <span class="text-danger text-left">{{ $errors->first('password') }}</span>
-                     @endif
                      <div class="field mb-1">
                         <div class="label">
                            Password
@@ -64,7 +58,6 @@
             </div>
          </div>
    </section>
-   <script src="{{ asset('assets/js/login.js') }}"></script>
 @endsection
 
 
