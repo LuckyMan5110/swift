@@ -43,7 +43,6 @@
                           <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">LENDER</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">NOTARY</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">SIGNING SERVICE</a></li>
-                          <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">SIGNING SERVICE</a></li>
                           <li class="nav-item"><a class="nav-link" href="{{ route('home.contact') }}">CONTACT</a></li>
                           {{-- <li class="nav-item"><a class="nav-link" href="{{ route('register.perform') }}">SIGNUP</a></li> --}}
                         </ul>
