@@ -50,17 +50,20 @@
                           @auth
                               {{-- <li class="nav-item"><a class="nav-link" href="{{ URL('/login') }}">aaaaa</a></li> --}}
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
-                                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                      <li><a class="dropdown-item" href="{{ route('user.index') }}">Settings</a></li>
-                                      <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
-                                  </ul>
-                              </li>
-                          @endauth
-                          
-                          @guest
-                              <li class="nav-item"><a class="nav-link" href="{{ route('login.show') }}">LOGIN</a></li>
-                          @endguest
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{Auth::user()->username}}</a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                        <li><a class="dropdown-item" href="{{ route('user.index') }}">Settings</a></li>
+                                        @if (Auth::check() && Auth::user()->is_admin)
+                                            <li><a class="dropdown-item" href="{{ route('post.index') }}">Feedback</a></li>
+                                        @endif
+                                        <li><a class="dropdown-item"  href="{{ route('logout.perform') }}">Log Out</a></li>
+                                    </ul>
+                                </li>
+                            @endauth
+                            
+                            @guest
+                                <li class="nav-item"><a class="nav-link" href="{{ route('login.show') }}">LOGIN</a></li>
+                            @endguest
                         </ul>
                     </div>
               </div>

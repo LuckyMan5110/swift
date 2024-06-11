@@ -10,15 +10,21 @@ class PostController extends Controller
     public function index()
     {
         // Retrieve all posts
-        $posts = Post::all();
-        return view('posts.index', compact('posts'));
+        $posts = Post::orderBy('id')->paginate(10);
+        return view('auth.post', compact('posts'));
     }
 
-    public function show($id)
+    // public function show($id)
+    // {
+    //     // Retrieve a single post by its ID
+    //     $post = Post::findOrFail($id);
+    //     return view('posts.show', compact('post'));
+    // }
+
+    public function destroy(Post $post)
     {
-        // Retrieve a single post by its ID
-        $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+        $post->delete();
+        return redirect()->route('post.index')->with('delete_success','Deleted successfully');
     }
 
     public function sendMsg(Request $request) 

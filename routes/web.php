@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Logout Routes
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-
         Route::resource('user', UserController::class);
+    });
+        
+    Route::group(['middleware' => 'admin'], function () {
+        Route::resource('post', PostController::class);
     });
 });

@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  overflow: visible;
+  background: rgb(2,37,27);
+  background: linear-gradient(70deg, #140E38 0%, #140E38 25%, #14387B 35%, #14387B 65%, #140E38 75%, #140E38 100%);
+}
+
+.post{
+  margin-top: 6.5%;
+}
+
+.pagination{
+  float: right;
+}
+.pagination .flex-1 span, .pagination .flex-1 a{
+  background-color: #a343ff !important;
+}
+.pagination .flex-1 span{
+  color: darkgray;
+  cursor: not-allowed;
+}
+.pagination .flex-1 a{
+  color: #fff;
+  text-decoration: none;
+}
+.pagination p{
+  margin-top: 1rem;
+}
+.pagination .shadow-sm{
+  display: none !important;
+}
+.pagination .hidden p{
+  color: #fff;
+}

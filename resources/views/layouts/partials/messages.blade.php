@@ -66,6 +66,16 @@
         </div>
     @endif
 
+    @if(session()->has('delete_success'))
+        <div class="alert failed">
+        <span class="alert-icon"><i class="fa fa-exclamation"></i></span>
+        <span class="alert-content">
+            <span class="alert-close"><i class="fa fa-times"></i></span>
+            <span class="alert-title">{{ session()->get('delete_success') }}</span>
+        </span>
+        </div>
+    @endif
+
     
 </div>
 
